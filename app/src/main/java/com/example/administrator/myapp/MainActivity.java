@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
                 header.put("height", 150);
                 header.put("type", "jpg");
                 try {
-                    header.put("content", WordUtil.inputStream2ByteArray(new FileInputStream("/storage/sdcard0/1.jpg"), true));
+                    header.put("content", WordUtil.inputStream2ByteArray(new FileInputStream("/sdcard/1.jpg"), true));
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -50,11 +50,12 @@ public class MainActivity extends Activity {
         twocode.put("content", ZxingEncoderHandler.getTwoCodeByteArray("娴嬭瘯浜岀淮鐮�,huangqiqing", 100,100));
         param.put("${twocode}",twocode);  */
 
-                CustomXWPFDocument doc =  WordUtil.generateWord(param, "/storage/sdcard0/1.docx");
+                CustomXWPFDocument doc =  WordUtil.generateWord(param, "/sdcard/1.docx");
                 FileOutputStream fopts = null;
                 try {
-                    fopts = new FileOutputStream("/storage/sdcard0/2.docx");
+                    fopts = new FileOutputStream("/sdcard/2.docx");
                     doc.write(fopts);
+                    fopts.flush();
                     fopts.close();
                 } catch (FileNotFoundException e) {
                 Toast.makeText(getApplication(),"fileNOTFound",Toast.LENGTH_SHORT).show();
