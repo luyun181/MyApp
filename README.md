@@ -2,7 +2,7 @@
 POI Test
 文件在手机sd卡上
 Android version 是4.x会出现下面的错误。5.0以上的能成功运行。
-
+还有要注意word版本。07运行没有问题。2013不行。
 现在报错：
   05-30 15:25:33.628 17821-17821/? E/AndroidRuntime: FATAL EXCEPTION: main、
   
